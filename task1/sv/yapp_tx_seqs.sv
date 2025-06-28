@@ -197,7 +197,7 @@ class yapp_rnd_seq extends yapp_base_seq;
   
   constraint count_1_10 {count inside {[1:10]};}
 
-  function new(string new = "yapp_rnd_seq");
+  function new(string name="yapp_rnd_seq");
     super.new(name);
   endfunction
 
@@ -222,12 +222,15 @@ yapp_rnd_seq rand_seq;
 
 function new(string name = "six_yapp_seq");
   super.new(name);
+endfunction
 
   virtual task body();
-     `uvm_info ("Counting in six_yapp_seq", $sformatf("Count is = %0d", rand_seq.count), UVM_LOW);
-    `uvm_do_with(yapp_rand, {count == 6};)
+  begin
+    `uvm_do_with(rand_seq, {count == 6;})
+    `uvm_info ("Counting in six_yapp_seq", $sformatf("Count is = %0d", rand_seq.count), UVM_LOW)
+  end
   endtask
-endfunction
+
 
 endclass: six_yapp_seq
 
