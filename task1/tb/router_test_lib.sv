@@ -94,3 +94,20 @@ class incr_paylaod_test extends base_test;
 
 endclass
  
+
+class exhaustive_test extends base_test;
+
+    `uvm_component_utils(exhaustive_test)
+
+    function new(string name="exhaustive_test", uvm_component parent);
+        super.new(name, parent);
+    endfunction 
+
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        set_type_override_by_type(yapp_packet::get_type(), short_yapp_packet::get_type());
+        uvm_config_wrapper::set(this, "inst_tb.environment.agent.sequencer.run_phase",
+                       "default_sequence",
+                       yapp_exhaustive_seq::get_type());
+    endfunction
+endclass

@@ -10,7 +10,7 @@
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d
 -sv_lib
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so
-+UVM_TESTNAME=incr_paylaod_test
++UVM_TESTNAME=exhaustive_test
 -SVSEED
 random
 -MESSAGES
@@ -20,7 +20,7 @@ random
 +EMGRLOG
 xrun.log
 -XLSTIME
-1751019808
+1751108341
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.23.09.d
@@ -34,4 +34,4 @@ xrun
 -XLVERSION
 "TOOL:	xrun(64)	23.09-s006"
 -XLNAME
-./xcelium.d/run.lnx8664.23.09.d/ncdc-0037_c0424565-ee2a-4739-8b59-8dd992167fb3
+./xcelium.d/run.lnx8664.23.09.d/ncdc-0037_a7ab0115-a388-46a5-96be-e736dc1812cc

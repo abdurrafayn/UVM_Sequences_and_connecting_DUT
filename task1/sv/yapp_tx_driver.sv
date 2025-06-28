@@ -6,7 +6,7 @@ class yapp_driver extends uvm_driver#(yapp_packet);
         super.new(name,parent);
     endfunction
 
-    task (uvm_phase phase);
+    task run_phase(uvm_phase phase);
     forever begin
         seq_item_port.get_next_item(req); 
 

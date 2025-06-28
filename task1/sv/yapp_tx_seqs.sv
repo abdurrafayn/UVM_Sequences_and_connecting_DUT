@@ -188,5 +188,32 @@ endclass: yapp_incr_payload_seq
 
 
 
+class yapp_exhaustive_seq extends yapp_base_seq;
+
+  `uvm_object_utils(yapp_exhaustive_seq)
+
+  yapp_1_packets y_seq1;
+  yapp_012_packets y_seq012;
+  yapp_111_packets y_seq111;
+  yapp_repeat_addr_packets y_seq_repeat;
+  yapp_incr_payload_seq y_seq_incr;
+
+  // Constructor
+  function new(string name = "yapp_exhaustive_seq");
+    super.new(name);
+  endfunction
+
+  virtual task body();
+    `uvm_info(get_type_name(), "Executing yapp_exhaustive_seq sequence", UVM_LOW)
+
+    `uvm_do(y_seq1)
+    `uvm_do(y_seq012)
+    `uvm_do(y_seq111)
+    `uvm_do(y_seq_repeat)
+    `uvm_do(y_seq_incr) 
+
+  endtask
+endclass : yapp_exhaustive_seq
+
 
 

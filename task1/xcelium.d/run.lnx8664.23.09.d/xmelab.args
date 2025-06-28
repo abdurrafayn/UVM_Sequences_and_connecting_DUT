@@ -8,7 +8,7 @@
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so:uvm_pli_boot
 -ACCESS
 +rwc
-+UVM_TESTNAME=incr_paylaod_test
++UVM_TESTNAME=exhaustive_test
 -no_analogsolver
 -MESSAGES
 -XLMODE

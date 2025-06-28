@@ -5,6 +5,6 @@
 ./sv/yapp_pkg.sv
 ./tb/top.sv
 
-+UVM_TESTNAME=incr_paylaod_test
++UVM_TESTNAME=exhaustive_test
 +UVM_VERBOSITY=UVM_HIGH
  +SVSEED=random
