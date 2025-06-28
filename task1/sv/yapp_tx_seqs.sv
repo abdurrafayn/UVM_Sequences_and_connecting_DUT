@@ -186,6 +186,53 @@ class yapp_incr_payload_seq extends yapp_base_seq;
 
 endclass: yapp_incr_payload_seq 
 
+// *****************************yapp_rnd_seq***************************************
+
+
+class yapp_rnd_seq extends yapp_base_seq;
+
+  `uvm_object_utils(yapp_rnd_seq)
+
+  rand int count;
+  
+  constraint count_1_10 {count inside {[1:10]};}
+
+  function new(string new = "yapp_rnd_seq");
+    super.new(name);
+  endfunction
+
+  virtual task body();
+
+  repeat(count)
+  begin
+    `uvm_info ("Counting in yapp_rnd_seq", $sformatf("Packet is = %0d", count), UVM_LOW);
+    `uvm_do(req)
+  end
+  endtask
+endclass: yapp_rnd_seq
+
+// *****************************six_yapp_seq***************************************
+
+
+class six_yapp_seq extends yapp_base_seq;
+
+`uvm_object_utils(six_yapp_seq)
+
+yapp_rnd_seq rand_seq;
+
+function new(string name = "six_yapp_seq");
+  super.new(name);
+
+  virtual task body();
+     `uvm_info ("Counting in six_yapp_seq", $sformatf("Count is = %0d", rand_seq.count), UVM_LOW);
+    `uvm_do_with(yapp_rand, {count == 6};)
+  endtask
+endfunction
+
+endclass: six_yapp_seq
+
+
+// *****************************yapp_exhaustive_seq***************************************
 
 
 class yapp_exhaustive_seq extends yapp_base_seq;
@@ -197,6 +244,8 @@ class yapp_exhaustive_seq extends yapp_base_seq;
   yapp_111_packets y_seq111;
   yapp_repeat_addr_packets y_seq_repeat;
   yapp_incr_payload_seq y_seq_incr;
+  yapp_rnd_seq y_seq_rand;
+  six_yapp_seq y_seq_six;
 
   // Constructor
   function new(string name = "yapp_exhaustive_seq");
@@ -211,6 +260,9 @@ class yapp_exhaustive_seq extends yapp_base_seq;
     `uvm_do(y_seq111)
     `uvm_do(y_seq_repeat)
     `uvm_do(y_seq_incr) 
+    `uvm_do(y_seq_rand)
+    `uvm_do(y_seq_six)
+
 
   endtask
 endclass : yapp_exhaustive_seq

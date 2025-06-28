@@ -92,7 +92,7 @@ class short_yapp_packet extends yapp_packet;
     super.new(name);
   endfunction
 
-constraint cons_addr { addr != 2;} 
+//constraint cons_addr { addr != 2;} 
 
 constraint c_length {length <15;}
 
