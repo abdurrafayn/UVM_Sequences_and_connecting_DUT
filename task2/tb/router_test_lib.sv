@@ -29,6 +29,12 @@ class base_test extends uvm_test;
         
     endfunction
 
+    task run_phase(uvm_phase phase);
+        uvm_objection obj = phase.get_objection(); 
+        obj.set_drain_time(this, 200ns);
+
+    endtask
+
     function void check_phase(uvm_phase phase);
         check_config_usage();
     endfunction
@@ -74,4 +80,58 @@ class set_config_test extends base_test;
         uvm_config_int::set(this,"inst_tb.environment.agent", "is_active", UVM_PASSIVE);
     endfunction
 
+endclass
+
+class incr_paylaod_test extends base_test;
+
+    `uvm_component_utils(incr_paylaod_test)
+
+    function new(string name="incr_paylaod_test", uvm_component parent);
+        super.new(name, parent);
+    endfunction 
+
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+       
+        uvm_config_wrapper::set(this, "inst_tb.environment.agent.sequencer.run_phase",
+                       "default_sequence",
+                       yapp_incr_payload_seq::get_type());
+    endfunction
+
+endclass
+ 
+
+class exhaustive_test extends base_test;
+
+    `uvm_component_utils(exhaustive_test)
+
+    function new(string name="exhaustive_test", uvm_component parent);
+        super.new(name, parent);
+    endfunction 
+
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        set_type_override_by_type(yapp_packet::get_type(), short_yapp_packet::get_type());
+        uvm_config_wrapper::set(this, "inst_tb.environment.agent.sequencer.run_phase",
+                       "default_sequence",
+                       yapp_exhaustive_seq::get_type());
+    endfunction
+endclass
+
+
+class new_test012 extends base_test;
+
+    `uvm_component_utils(new_test012)
+
+    function new(string name="new_test012", uvm_component parent);
+        super.new(name, parent);
+    endfunction 
+
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        set_type_override_by_type(yapp_packet::get_type(), short_yapp_packet::get_type());
+        uvm_config_wrapper::set(this, "inst_tb.environment.agent.sequencer.run_phase",
+                       "default_sequence",
+                       yapp_012_packets::get_type());
+    endfunction
 endclass

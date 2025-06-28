@@ -41,6 +41,7 @@ class yapp_packet extends uvm_sequence_item;
   foreach(payload[i]) begin
     result ^= payload[i];
   end
+   result ^= { length, addr };
   return result;
   endfunction
 
@@ -91,7 +92,7 @@ class short_yapp_packet extends yapp_packet;
     super.new(name);
   endfunction
 
-constraint cons_addr { addr != 2;} 
+//constraint cons_addr { addr != 2;} 
 
 constraint c_length {length <15;}
 
