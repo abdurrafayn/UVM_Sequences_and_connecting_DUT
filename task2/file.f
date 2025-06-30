@@ -8,8 +8,10 @@
 ./sv/yapp_if.sv
 
 ./tb/clkgen.sv
-./tb/hw_top_no_dut.sv
+./tb/yapp_router.sv
+./tb/hw_top_dut.sv
 ./tb/tb_top.sv
+
 
 +UVM_TESTNAME=new_test012
 +UVM_VERBOSITY=UVM_HIGH

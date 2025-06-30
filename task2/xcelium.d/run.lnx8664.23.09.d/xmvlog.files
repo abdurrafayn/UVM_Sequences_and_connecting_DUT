@@ -5,5 +5,6 @@
 /home/cc/Downloads/Abdur_Rafay_Data/UVM_Labs/lab_42/task2/sv/yapp_pkg.sv
 /home/cc/Downloads/Abdur_Rafay_Data/UVM_Labs/lab_42/task2/sv/yapp_if.sv
 /home/cc/Downloads/Abdur_Rafay_Data/UVM_Labs/lab_42/task2/tb/clkgen.sv
-/home/cc/Downloads/Abdur_Rafay_Data/UVM_Labs/lab_42/task2/tb/hw_top_no_dut.sv
+/home/cc/Downloads/Abdur_Rafay_Data/UVM_Labs/lab_42/task2/tb/yapp_router.sv
+/home/cc/Downloads/Abdur_Rafay_Data/UVM_Labs/lab_42/task2/tb/hw_top_dut.sv
 /home/cc/Downloads/Abdur_Rafay_Data/UVM_Labs/lab_42/task2/tb/tb_top.sv

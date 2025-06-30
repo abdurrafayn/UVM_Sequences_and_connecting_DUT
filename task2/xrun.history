@@ -4,3 +4,11 @@ s3(28Jun2025:19:19:46):  xrun -access +rwc -uvm -f file.f
 s4(28Jun2025:19:19:57):  xrun -access +rwc -uvm -f file.f 
 s5(28Jun2025:19:23:07):  xrun -access +rwc -uvm -f file.f -gui 
 s6(28Jun2025:19:23:30):  xrun -access +rwc -uvm -f file.f -gui 
+s7(30Jun2025:12:08:24):  xrun -access +rwc -uvm -f file.f -gui 
+s8(30Jun2025:12:16:06):  xrun -access +rwc -uvm -f file.f -gui 
+s9(30Jun2025:12:25:26):  xrun -access +rwc -uvm -f file.f 
+s10(30Jun2025:12:25:51):  xrun -access +rwc -uvm -f file.f 
+s11(30Jun2025:12:26:50):  xrun -access +rwc -uvm -f file.f 
+s12(30Jun2025:12:28:12):  xrun -access +rwc -uvm -f file.f 
+s13(30Jun2025:12:30:07):  xrun -access +rwc -uvm -f file.f 
+s14(30Jun2025:12:31:00):  xrun -access +rwc -uvm -f file.f -gui 

@@ -71,7 +71,7 @@ class yapp_driver extends uvm_driver#(yapp_packet);
 
   function void connect_phase(uvm_phase phase);
     if (!yapp_vif_config::get(this,"","vif", vif))
-        `uvm_error("NOVIF","vif not set")
+        `uvm_fatal("NOVIF","vif not set")
   endfunction
   
 endclass

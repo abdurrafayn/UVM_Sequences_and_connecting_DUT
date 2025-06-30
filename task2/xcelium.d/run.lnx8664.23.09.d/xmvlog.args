@@ -15,7 +15,8 @@ UVM_PLI
 ./sv/yapp_pkg.sv
 ./sv/yapp_if.sv
 ./tb/clkgen.sv
-./tb/hw_top_no_dut.sv
+./tb/yapp_router.sv
+./tb/hw_top_dut.sv
 ./tb/tb_top.sv
 -CDSLIB
 ./xcelium.d/run.lnx8664.23.09.d/cdsrun.lib
